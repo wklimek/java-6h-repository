@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 public class Book {
     @Id
     private String isbn;
+
     private String title;
 
     @ManyToOne(cascade = CascadeType.ALL)

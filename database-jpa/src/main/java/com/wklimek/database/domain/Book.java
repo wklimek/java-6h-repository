@@ -21,5 +21,5 @@ public class Book {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
     private Author author;
-};
+}
 

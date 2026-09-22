@@ -1,41 +1,41 @@
-//package com.wklimek.database.repositories;
-//
-//import com.wklimek.database.TestDataUtil;
-//import com.wklimek.database.domain.Author;
-//import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.api.extension.ExtendWith;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.test.annotation.DirtiesContext;
-//import org.springframework.test.context.junit.jupiter.SpringExtension;
-//import static org.assertj.core.api.Assertions.assertThat;
-//
-//import java.util.List;
-//import java.util.Optional;
-//
-//@SpringBootTest
-//@ExtendWith(SpringExtension.class)
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-//public class AuthorDaoImplIntegrationTests {
-//
-//    private final AuthorDaoImpl underTest;
-//
-//    @Autowired
-//    public AuthorDaoImplIntegrationTests(AuthorDaoImpl underTest) {
-//        this.underTest = underTest;
-//    }
-//
-//    @Test
-//    public void testThatAuthorCanBeCreatedAndRecalled(){
-//        Author author = TestDataUtil.createTestAuthorA();
-//        underTest.create(author);
-//
-//        Optional<Author> result = underTest.findOne(author.getId());
-//
-//        assertThat(result).isPresent();
-//        assertThat(result.get()).isEqualTo(author);
-//    }
-//
+package com.wklimek.database.repositories;
+
+import com.wklimek.database.TestDataUtil;
+import com.wklimek.database.domain.Author;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+import java.util.Optional;
+
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+public class AuthorRepositoryIntegrationTests {
+
+    private final AuthorRepository underTest;
+
+    @Autowired
+    public AuthorRepositoryIntegrationTests(AuthorRepository underTest) {
+        this.underTest = underTest;
+    }
+
+    @Test
+    public void testThatAuthorCanBeCreatedAndRecalled(){
+        Author author = TestDataUtil.createTestAuthorA();
+        underTest.save(author);
+
+        Optional<Author> result = underTest.findById(author.getId());
+
+        assertThat(result).isPresent();
+        assertThat(result.get()).isEqualTo(author);
+    }
+
 //    @Test
 //    public void testThatManyAuthorsCanBeCreatedAndRecalled(){
 //        Author authorA = TestDataUtil.createTestAuthorA();
@@ -74,5 +74,5 @@
 //        Optional<Author> result1 = underTest.findOne(authorA.getId());
 //        assertThat(result1).isEmpty();
 //    }
-//
-//}
+
+}

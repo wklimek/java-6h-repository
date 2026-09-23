@@ -14,14 +14,14 @@ public class TestDataUtil {
     public static Author createTestAuthorB() {
         return Author.builder()
                 .name("Tom")
-                .age(60)
+                .age(44)
                 .build();
     }
 
     public static Author createTestAuthorC() {
         return Author.builder()
                 .name("Ralph")
-                .age(31)
+                .age(24)
                 .build();
     }
 

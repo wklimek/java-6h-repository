@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.List;
 import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
@@ -26,7 +26,7 @@ public class AuthorRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatAuthorCanBeCreatedAndRecalled(){
+    public void testThatAuthorCanBeCreatedAndRecalled() {
         Author author = TestDataUtil.createTestAuthorA();
         underTest.save(author);
 
@@ -37,7 +37,7 @@ public class AuthorRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatManyAuthorsCanBeCreatedAndRecalled(){
+    public void testThatManyAuthorsCanBeCreatedAndRecalled() {
         Author authorA = TestDataUtil.createTestAuthorA();
         Author authorB = TestDataUtil.createTestAuthorB();
         Author authorC = TestDataUtil.createTestAuthorC();
@@ -53,7 +53,7 @@ public class AuthorRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatAuthorCanBeUpdated(){
+    public void testThatAuthorCanBeUpdated() {
         Author authorA = TestDataUtil.createTestAuthorA();
         underTest.save(authorA);
         authorA.setName("UPDATED");
@@ -67,7 +67,7 @@ public class AuthorRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatAuthorCanBeDeleted(){
+    public void testThatAuthorCanBeDeleted() {
         Author authorA = TestDataUtil.createTestAuthorA();
         underTest.save(authorA);
         underTest.deleteById(authorA.getId());
@@ -76,7 +76,7 @@ public class AuthorRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatGetAuthorWithAgeLessThan(){
+    public void testThatGetAuthorWithAgeLessThan() {
         Author testAuthorA = TestDataUtil.createTestAuthorA();
         underTest.save(testAuthorA);
         Author testAuthorB = TestDataUtil.createTestAuthorB();
@@ -89,7 +89,7 @@ public class AuthorRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatGetAuthorWithAgeGraterThan(){
+    public void testThatGetAuthorWithAgeGraterThan() {
         Author testAuthorA = TestDataUtil.createTestAuthorA();
         underTest.save(testAuthorA);
         Author testAuthorB = TestDataUtil.createTestAuthorB();

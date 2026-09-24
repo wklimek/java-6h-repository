@@ -10,10 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.List;
 import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
@@ -42,7 +41,7 @@ public class BookRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatMultipleBooksCanBeCreatedAndRecalled(){
+    public void testThatMultipleBooksCanBeCreatedAndRecalled() {
         Author author = authorRepository.save(TestDataUtil.createTestAuthorA());
 
         Book bookA = TestDataUtil.createTestBookA(author);
@@ -60,7 +59,7 @@ public class BookRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatBookCanBeUpdated(){
+    public void testThatBookCanBeUpdated() {
         Author author = authorRepository.save(TestDataUtil.createTestAuthorA());
 
         Book bookA = TestDataUtil.createTestBookA(author);
@@ -75,7 +74,7 @@ public class BookRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatBookCanBeDeleted(){
+    public void testThatBookCanBeDeleted() {
         Author author = authorRepository.save(TestDataUtil.createTestAuthorA());
 
         Book bookA = TestDataUtil.createTestBookA(author);

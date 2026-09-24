@@ -25,7 +25,7 @@ public class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBookA(final Author author){
+    public static Book createTestBookA(final Author author) {
 
         return Book.builder()
                 .isbn("some-isbn-A")
@@ -34,7 +34,7 @@ public class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBookB(final Author author){
+    public static Book createTestBookB(final Author author) {
 
         return Book.builder()
                 .isbn("some-isbn-B")
@@ -43,7 +43,7 @@ public class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBookC(final Author author){
+    public static Book createTestBookC(final Author author) {
 
         return Book.builder()
                 .isbn("some-isbn-C")
